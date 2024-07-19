@@ -1,15 +1,20 @@
+package screenMatch;
+
 import screenMatch.calculations.RecomendationFilter;
 import screenMatch.models.Episode;
 import screenMatch.models.Film;
 import screenMatch.models.Serie;
 import screenMatch.calculations.TimeCalculator;
+import screenMatch.models.Title;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
         // films
-        Film film = new Film();
-        film.setName("Star Wars");
+        Film film = new Film("Star Wars");
         film.setMinutesDuration(200);
         film.setReleaseYear(1970);
         film.setAssessment(5);
@@ -21,8 +26,7 @@ public class Main {
         System.out.println("Total assessment: " + film.getTotalAssessment());
         System.out.println(film.getMedia());
 
-        Film film2 = new Film();
-        film2.setName("Jurassic Word");
+        Film film2 = new Film("Jurassic Word");
         film2.setMinutesDuration(180);
         film2.setReleaseYear(1990);
         film2.setAssessment(10);
@@ -63,6 +67,18 @@ public class Main {
 
         recomendationFilter.filter(serie);
 
+        Film film3= new Film("Dogville");
+        film3.setMinutesDuration(200);
+        film3.setReleaseYear(2003);
+        film3.setAssessment(10);
+
+        ArrayList<Film> films = new ArrayList<>();
+        films.add(film3);
+        films.add(film2);
+        films.add(film);
+        System.out.println("list size: " + films.size());
+        System.out.println("Film1: " + films.get(0).getName());
+        System.out.println(films);
 
     }
 }

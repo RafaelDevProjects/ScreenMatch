@@ -50,6 +50,18 @@ public class Title implements Classification {
         return assessmentSum / totalAssessment;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public boolean isPlanIncluded() {
+        return planIncluded;
+    }
+
     @Override
     public int getClassification() {
         return (int )getMedia() / 2;
