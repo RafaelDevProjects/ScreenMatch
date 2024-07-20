@@ -2,13 +2,19 @@ package screenMatch.models;
 
 import screenMatch.calculations.Classification;
 
-public class Title implements Classification {
+public class Title {
     protected String name;
     protected int releaseYear;
     protected boolean planIncluded;
     protected double assessmentSum;
     protected int totalAssessment;
     protected int minutesDuration;
+
+    //constructor
+    public Title(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
 
     //setters
     public void setMinutesDuration(int minutesDuration) {
@@ -60,10 +66,5 @@ public class Title implements Classification {
 
     public boolean isPlanIncluded() {
         return planIncluded;
-    }
-
-    @Override
-    public int getClassification() {
-        return (int )getMedia() / 2;
     }
 }

@@ -56,3 +56,8 @@ Construtor: tem como função a criação de um objeto em memória
 - uso: podemos passar parametros para iniciar o nosso objeto já com alguns atributos (alguns objetos já precisam nascer com atributos)
 - sintaxe: public ClassName(params) {}
 - sobrecarga: contrutores podem ter sobrecargas, classes podem ter mais de um construtor.
+
+
+#instanceof
+instanceof: verifica se uma classe é uma instancia de "ClassName"
+sintaxe: instanceof

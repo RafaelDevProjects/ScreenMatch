@@ -2,11 +2,11 @@ package screenMatch.models;
 
 import screenMatch.calculations.Classification;
 
-public class Film extends Title{
+public class Film extends Title implements Classification{
     private String director;
 
-    public Film(String name) {
-        this.name = name;
+    public Film(String name, int realeseYear) {
+        super(name, realeseYear);
     }
 
     public String getDirector() {
@@ -20,6 +20,11 @@ public class Film extends Title{
     @Override
     public String toString(){
         return "Film: " + this.name + "( " + this.releaseYear + " )";
+    }
+
+    @Override
+    public int getClassification() {
+        return (int )getMedia() / 2;
     }
 
 }
