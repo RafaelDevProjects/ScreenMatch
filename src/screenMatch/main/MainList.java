@@ -4,7 +4,7 @@ import screenMatch.models.Film;
 import screenMatch.models.Serie;
 import screenMatch.models.Title;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class MainList {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class MainList {
 
         Serie serie = new Serie("Lost",2000);
 
-        ArrayList<Title> titlesList = new ArrayList<>();
+        List<Title> titlesList = new LinkedList<>();
         titlesList.add(film3);
         titlesList.add(film2);
         titlesList.add(film);
@@ -29,6 +29,12 @@ public class MainList {
             }
         }
 
+        Collections.sort(titlesList); // implementa o Comparable e usa o compareTo para ordenar essa lista de titles.
+        System.out.println("Ordenado por ordem alfabetica: " + titlesList);
+
+        // compara pelo ano de lançamento
+        titlesList.sort(Comparator.comparing(Title::getReleaseYear)); // usando o metodo sort e usando o metodo do Comparator chamado comparing que tem outro argumento que escolhe oque vamos comparar da nossa classe.
+        System.out.println("Ordenado por ano de lançamento: " + titlesList);
 
     }
 }

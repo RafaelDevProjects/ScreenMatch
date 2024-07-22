@@ -47,6 +47,10 @@ ArrayList: o ArrayList é uma lista de objetos que podem ter um tipo e possuem m
     - add() : adiciona um objeto ao array contanto que seja do mesmo tipo ou herdede do tipo do array
     - size() : pega o tamanho do arrayList
 
+-Comparable: o comparable é usado quando queremos comparar uma coisa com a outra, por exemplo para fazer um sort, podemos implementa-lo na nossa classe
+-Comparator: o comparator é usado para comparar uma coisa com a outra também, porem é mais moderno e podemos comparar mais de uma coisa, nele não precisamos implementar a interface comparable
+
+
 # toString
 toString: é um metodo que todos os obejtos herdam da classe object, podemos usar o @Override para sobrescrever esse método.
 -uso:  podemos usa-lo quando queremos imprimir a classe com seus atricutos.
@@ -61,3 +65,44 @@ Construtor: tem como função a criação de um objeto em memória
 #instanceof
 instanceof: verifica se uma classe é uma instancia de "ClassName"
 sintaxe: instanceof
+
+#b HashMap
+O HashMap é uma classe que implementa a interface Map usando uma tabela hash para armazenar os pares chave-valor.
+Ele é conhecido por sua eficiência em termos de tempo de execução.
+Essa classe tem uma complexidade de tempo O(1) - constante - para inserção, recuperação e remoção de elementos.
+Isso significa que o desempenho do HashMap não depende do tamanho da coleção de dados
+
+No entanto, é importante lembrar que o HashMap não mantém a ordem de inserção dos elementos e não garante a ordem dos elementos na saída.
+Isso ocorre porque a ordem dos elementos depende da função de hash usada para mapear as chaves para índices na tabela hash.
+Além disso, o desempenho do HashMap pode ser afetado se houver muitas colisões de hash entre as chaves.
+
+exemplo:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ExemploHashMap {
+
+    public static void main(String[] args) {
+        //Criando um objeto da classe HashMap que implementa a interface Map
+        Map<String, Integer> usandoHashMap = new HashMap<>();
+
+        // Adicionando pares chave-valor
+        usandoHashMap.put("Gatos", 1);
+        usandoHashMap.put("Cachorros", 2);
+        usandoHashMap.put("Roedores", 3);
+
+        // Acessando um valor através de uma chave
+        int valor = usandoHashMap.get("Cachorros");
+        System.out.println("Valor da chave Cachorros: " + valor);
+
+        // Removendo um par chave-valor
+        usandoHashMap.remove("Gatos");
+
+        // Iterando sobre as chaves
+        for (String chave : usandoHashMap.keySet()) {
+            System.out.println("Chave: " + chave);
+            System.out.println("Valor: " + usandoHashMap.get(chave));
+        }
+    }
+}

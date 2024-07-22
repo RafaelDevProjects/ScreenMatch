@@ -2,7 +2,7 @@ package screenMatch.models;
 
 import screenMatch.calculations.Classification;
 
-public class Title {
+public class Title implements Comparable<Title> {
     protected String name;
     protected int releaseYear;
     protected boolean planIncluded;
@@ -66,5 +66,11 @@ public class Title {
 
     public boolean isPlanIncluded() {
         return planIncluded;
+    }
+
+    // comparable
+    @Override
+    public int compareTo(Title o) {
+        return this.getName().compareTo(o.getName());
     }
 }
