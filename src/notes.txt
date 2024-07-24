@@ -106,3 +106,9 @@ public class ExemploHashMap {
         }
     }
 }
+
+
+// Requests
+Postman : para testar sua api
+Insomnia : para testar sua api
+Biblioteca para Requests: HttpClient, HttpRequest, HttpResponse
