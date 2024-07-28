@@ -112,3 +112,4 @@ public class ExemploHashMap {
 Postman : para testar sua api
 Insomnia : para testar sua api
 Biblioteca para Requests: HttpClient, HttpRequest, HttpResponse
+Biblioteca para deserializar o json: GSON

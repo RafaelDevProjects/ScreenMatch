@@ -1,6 +1,8 @@
 package screenMatch.models;
 
+import com.google.gson.annotations.SerializedName;
 import screenMatch.calculations.Classification;
+import screenMatch.exceptions.InvalidConversionYear;
 
 public class Title implements Comparable<Title> {
     protected String name;
@@ -14,6 +16,15 @@ public class Title implements Comparable<Title> {
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
+    }
+
+    public Title(TitleOMDb titleOMDb) {
+        this.name = titleOMDb.title();
+        if (titleOMDb.year().length() > 4) {
+            throw new InvalidConversionYear("It was not possible to convert the year with more than 4 characters");
+        }
+        this.releaseYear = Integer.valueOf(titleOMDb.year());
+        this.minutesDuration = Integer.valueOf(titleOMDb.runtime().substring(0,2));
     }
 
     //setters
@@ -72,5 +83,10 @@ public class Title implements Comparable<Title> {
     @Override
     public int compareTo(Title o) {
         return this.getName().compareTo(o.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "(name = " + name + ' ' + ", releaseYear = " + releaseYear + ", Duration = " + minutesDuration + " )";
     }
 }
